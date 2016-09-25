@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7AB7B5D-934E-4666-BCC2-EB07D3D7E9D3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>blinkgc</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>INSIDE_BLINK=1;ENABLE_ASSERT = 1;WTF_COMPILER_MSVC=1;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\config.h" />
+    <ClInclude Include="..\platform\heap\BlinkGCMemoryDumpProvider.h" />
+    <ClInclude Include="..\platform\heap\CallbackStack.h" />
+    <ClInclude Include="..\platform\heap\GarbageCollected.h" />
+    <ClInclude Include="..\platform\heap\GCInfo.h" />
+    <ClInclude Include="..\platform\heap\Handle.h" />
+    <ClInclude Include="..\platform\heap\Heap.h" />
+    <ClInclude Include="..\platform\heap\HeapAllocator.h" />
+    <ClInclude Include="..\platform\heap\HeapLinkedStack.h" />
+    <ClInclude Include="..\platform\heap\HeapTerminatedArray.h" />
+    <ClInclude Include="..\platform\heap\HeapTerminatedArrayBuilder.h" />
+    <ClInclude Include="..\platform\heap\InlinedGlobalMarkingVisitor.h" />
+    <ClInclude Include="..\platform\heap\MarkingVisitor.h" />
+    <ClInclude Include="..\platform\heap\MarkingVisitorImpl.h" />
+    <ClInclude Include="..\platform\heap\PageMemory.h" />
+    <ClInclude Include="..\platform\heap\PagePool.h" />
+    <ClInclude Include="..\platform\heap\PersistentNode.h" />
+    <ClInclude Include="..\platform\heap\SafePoint.h" />
+    <ClInclude Include="..\platform\heap\StackFrameDepth.h" />
+    <ClInclude Include="..\platform\heap\ThreadingTraits.h" />
+    <ClInclude Include="..\platform\heap\ThreadState.h" />
+    <ClInclude Include="..\platform\heap\TraceTraits.h" />
+    <ClInclude Include="..\platform\heap\Visitor.h" />
+    <ClInclude Include="..\platform\Platform.h" />
+    <ClInclude Include="..\platform\PlatformExport.h" />
+    <ClInclude Include="..\platform\ScriptForbiddenScope.h" />
+    <ClInclude Include="..\platform\Task.h" />
+    <ClInclude Include="..\platform\traceevent.h" />
+    <ClInclude Include="..\web\CurrentTimeImpl.h" />
+    <ClInclude Include="..\web\WebKit.h" />
+    <ClInclude Include="..\web\WebSchedulerImpl.h" />
+    <ClInclude Include="..\web\WebThreadImpl.h" />
+    <ClInclude Include="..\web\WebTimerBase.h" />
+    <ClInclude Include="..\wtf\AddressSanitizer.h" />
+    <ClInclude Include="..\wtf\AddressSpaceRandomization.h" />
+    <ClInclude Include="..\wtf\Alignment.h" />
+    <ClInclude Include="..\wtf\ArrayBuffer.h" />
+    <ClInclude Include="..\wtf\ArrayBufferBuilder.h" />
+    <ClInclude Include="..\wtf\ArrayBufferContents.h" />
+    <ClInclude Include="..\wtf\ArrayBufferView.h" />
+    <ClInclude Include="..\wtf\ArrayPiece.h" />
+    <ClInclude Include="..\wtf\ASCIICType.h" />
+    <ClInclude Include="..\wtf\Assertions.h" />
+    <ClInclude Include="..\wtf\Atomics.h" />
+    <ClInclude Include="..\wtf\BitArray.h" />
+    <ClInclude Include="..\wtf\BitVector.h" />
+    <ClInclude Include="..\wtf\BitwiseOperations.h" />
+    <ClInclude Include="..\wtf\BloomFilter.h" />
+    <ClInclude Include="..\wtf\ByteOrder.h" />
+    <ClInclude Include="..\wtf\ByteSwap.h" />
+    <ClInclude Include="..\wtf\CheckedArithmetic.h" />
+    <ClInclude Include="..\wtf\Compiler.h" />
+    <ClInclude Include="..\wtf\ConditionalDestructor.h" />
+    <ClInclude Include="..\wtf\ContainerAnnotations.h" />
+    <ClInclude Include="..\wtf\CPU.h" />
+    <ClInclude Include="..\wtf\CryptographicallyRandomNumber.h" />
+    <ClInclude Include="..\wtf\CurrentTime.h" />
+    <ClInclude Include="..\wtf\DataLog.h" />
+    <ClInclude Include="..\wtf\DateMath.h" />
+    <ClInclude Include="..\wtf\DefaultAllocator.h" />
+    <ClInclude Include="..\wtf\Deque.h" />
+    <ClInclude Include="..\wtf\DoublyLinkedList.h" />
+    <ClInclude Include="..\wtf\dtoa.h" />
+    <ClInclude Include="..\wtf\DynamicAnnotations.h" />
+    <ClInclude Include="..\wtf\FastAllocBase.h" />
+    <ClInclude Include="..\wtf\FastMalloc.h" />
+    <ClInclude Include="..\wtf\FilePrintStream.h" />
+    <ClInclude Include="..\wtf\Float32Array.h" />
+    <ClInclude Include="..\wtf\Float64Array.h" />
+    <ClInclude Include="..\wtf\Forward.h" />
+    <ClInclude Include="..\wtf\Functional.h" />
+    <ClInclude Include="..\wtf\GetPtr.h" />
+    <ClInclude Include="..\wtf\HashCountedSet.h" />
+    <ClInclude Include="..\wtf\HashFunctions.h" />
+    <ClInclude Include="..\wtf\HashIterators.h" />
+    <ClInclude Include="..\wtf\HashMap.h" />
+    <ClInclude Include="..\wtf\HashSet.h" />
+    <ClInclude Include="..\wtf\HashTable.h" />
+    <ClInclude Include="..\wtf\HashTableDeletedValueType.h" />
+    <ClInclude Include="..\wtf\HashTraits.h" />
+    <ClInclude Include="..\wtf\HexNumber.h" />
+    <ClInclude Include="..\wtf\InstanceCounter.h" />
+    <ClInclude Include="..\wtf\Int16Array.h" />
+    <ClInclude Include="..\wtf\Int32Array.h" />
+    <ClInclude Include="..\wtf\Int8Array.h" />
+    <ClInclude Include="..\wtf\IntegralTypedArrayBase.h" />
+    <ClInclude Include="..\wtf\LeakAnnotations.h" />
+    <ClInclude Include="..\wtf\LinkedHashSet.h" />
+    <ClInclude Include="..\wtf\LinkedStack.h" />
+    <ClInclude Include="..\wtf\ListHashSet.h" />
+    <ClInclude Include="..\wtf\Locker.h" />
+    <ClInclude Include="..\wtf\MainThread.h" />
+    <ClInclude Include="..\wtf\MathExtras.h" />
+    <ClInclude Include="..\wtf\MessageQueue.h" />
+    <ClInclude Include="..\wtf\Noncopyable.h" />
+    <ClInclude Include="..\wtf\NonCopyingSort.h" />
+    <ClInclude Include="..\wtf\NotFound.h" />
+    <ClInclude Include="..\wtf\NullPtr.h" />
+    <ClInclude Include="..\wtf\Optional.h" />
+    <ClInclude Include="..\wtf\OwnPtr.h" />
+    <ClInclude Include="..\wtf\OwnPtrCommon.h" />
+    <ClInclude Include="..\wtf\PageAllocator.h" />
+    <ClInclude Include="..\wtf\PartitionAlloc.h" />
+    <ClInclude Include="..\wtf\Partitions.h" />
+    <ClInclude Include="..\wtf\PassOwnPtr.h" />
+    <ClInclude Include="..\wtf\PassRefPtr.h" />
+    <ClInclude Include="..\wtf\PassTraits.h" />
+    <ClInclude Include="..\wtf\PrintStream.h" />
+    <ClInclude Include="..\wtf\RawPtr.h" />
+    <ClInclude Include="..\wtf\RefCounted.h" />
+    <ClInclude Include="..\wtf\RefCountedLeakCounter.h" />
+    <ClInclude Include="..\wtf\RefPtr.h" />
+    <ClInclude Include="..\wtf\RefVector.h" />
+    <ClInclude Include="..\wtf\RetainPtr.h" />
+    <ClInclude Include="..\wtf\SaturatedArithmetic.h" />
+    <ClInclude Include="..\wtf\SpinLock.h" />
+    <ClInclude Include="..\wtf\StaticConstructors.h" />
+    <ClInclude Include="..\wtf\StdLibExtras.h" />
+    <ClInclude Include="..\wtf\StreamBuffer.h" />
+    <ClInclude Include="..\wtf\StringExtras.h" />
+    <ClInclude Include="..\wtf\StringHasher.h" />
+    <ClInclude Include="..\wtf\TemporaryChange.h" />
+    <ClInclude Include="..\wtf\TerminatedArray.h" />
+    <ClInclude Include="..\wtf\TerminatedArrayBuilder.h" />
+    <ClInclude Include="..\wtf\text\ASCIIFastPath.h" />
+    <ClInclude Include="..\wtf\text\AtomicString.h" />
+    <ClInclude Include="..\wtf\text\AtomicStringHash.h" />
+    <ClInclude Include="..\wtf\text\Base64.h" />
+    <ClInclude Include="..\wtf\text\CharacterNames.h" />
+    <ClInclude Include="..\wtf\text\Collator.h" />
+    <ClInclude Include="..\wtf\text\CString.h" />
+    <ClInclude Include="..\wtf\text\IntegerToStringConversion.h" />
+    <ClInclude Include="..\wtf\text\qt4\QChar.h" />
+    <ClInclude Include="..\wtf\text\qt4\QString.h" />
+    <ClInclude Include="..\wtf\text\qt4\QtGlobal.h" />
+    <ClInclude Include="..\wtf\text\qt4\qunicodetables.h" />
+    <ClInclude Include="..\wtf\text\qt4\UnicodeMacrosFromICU.h" />
+    <ClInclude Include="..\wtf\text\qt4\UnicodeQt4.h" />
+    <ClInclude Include="..\wtf\text\StringBuffer.h" />
+    <ClInclude Include="..\wtf\text\StringBuilder.h" />
+    <ClInclude Include="..\wtf\text\StringConcatenate.h" />
+    <ClInclude Include="..\wtf\text\StringHash.h" />
+    <ClInclude Include="..\wtf\text\StringImpl.h" />
+    <ClInclude Include="..\wtf\text\StringOperators.h" />
+    <ClInclude Include="..\wtf\text\StringStatics.h" />
+    <ClInclude Include="..\wtf\text\StringUTF8Adaptor.h" />
+    <ClInclude Include="..\wtf\text\StringView.h" />
+    <ClInclude Include="..\wtf\text\TextCodec.h" />
+    <ClInclude Include="..\wtf\text\TextCodecASCIIFastPath.h" />
+    <ClInclude Include="..\wtf\text\TextCodecICU.h" />
+    <ClInclude Include="..\wtf\text\TextCodecLatin1.h" />
+    <ClInclude Include="..\wtf\text\TextCodecReplacement.h" />
+    <ClInclude Include="..\wtf\text\TextCodecUserDefined.h" />
+    <ClInclude Include="..\wtf\text\TextCodecUTF16.h" />
+    <ClInclude Include="..\wtf\text\TextCodecUTF8.h" />
+    <ClInclude Include="..\wtf\text\TextEncoding.h" />
+    <ClInclude Include="..\wtf\text\TextEncodingRegistry.h" />
+    <ClInclude Include="..\wtf\text\TextPosition.h" />
+    <ClInclude Include="..\wtf\text\Unicode.h" />
+    <ClInclude Include="..\wtf\text\UTF8.h" />
+    <ClInclude Include="..\wtf\text\WTFString.h" />
+    <ClInclude Include="..\wtf\text\WTFStringUtil.h" />
+    <ClInclude Include="..\wtf\Threading.h" />
+    <ClInclude Include="..\wtf\ThreadingPrimitives.h" />
+    <ClInclude Include="..\wtf\ThreadRestrictionVerifier.h" />
+    <ClInclude Include="..\wtf\ThreadSafeRefCounted.h" />
+    <ClInclude Include="..\wtf\ThreadSpecific.h" />
+    <ClInclude Include="..\wtf\TreeNode.h" />
+    <ClInclude Include="..\wtf\TriState.h" />
+    <ClInclude Include="..\wtf\TypedArrayBase.h" />
+    <ClInclude Include="..\wtf\TypeTraits.h" />
+    <ClInclude Include="..\wtf\Uint16Array.h" />
+    <ClInclude Include="..\wtf\Uint32Array.h" />
+    <ClInclude Include="..\wtf\Uint8Array.h" />
+    <ClInclude Include="..\wtf\Uint8ClampedArray.h" />
+    <ClInclude Include="..\wtf\Utility.h" />
+    <ClInclude Include="..\wtf\Vector.h" />
+    <ClInclude Include="..\wtf\VectorTraits.h" />
+    <ClInclude Include="..\wtf\WeakPtr.h" />
+    <ClInclude Include="..\wtf\WTF.h" />
+    <ClInclude Include="..\wtf\WTFExport.h" />
+    <ClInclude Include="..\wtf\WTFThreadData.h" />
+    <ClInclude Include="blinkgc.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\config.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">config.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="..\platform\asm\SaveRegisters_x86.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\BlinkGCMemoryDumpProvider.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\CallbackStack.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\GCInfo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\Heap.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\HeapAllocator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\PagePool.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\PersistentNode.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\SafePoint.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\StackFrameDepth.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\heap\ThreadState.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\Platform.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\platform\ScriptForbiddenScope.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\CurrentTimeImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebKit.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebMemoryDumpProvider.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebScheduler.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebSchedulerImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebThreadImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebTimerBase.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\web\WebTraceLocation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\AddressSpaceRandomization.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ArrayBuffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ArrayBufferBuilder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ArrayBufferContents.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ArrayBufferView.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ArrayPiece.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\Assertions.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\BitVector.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\CryptographicallyRandomNumber.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\CurrentTime.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\DataLog.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\DateMath.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\DefaultAllocator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\DynamicAnnotations.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\FastMalloc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\HashTable.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\InstanceCounter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\MainThread.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\PageAllocator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\PartitionAlloc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\Partitions.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\PrintStream.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\RefCountedLeakCounter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\SizeLimits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\AtomicString.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\Base64.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\CString.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\qt4\UnicodeQt4.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\StringBuilder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\StringConcatenate.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\StringImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\StringImplCF.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\StringStatics.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextCodec.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextCodecLatin1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextCodecReplacement.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextCodecUserDefined.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextCodecUTF16.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextCodecUTF8.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\TextPosition.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\UTF8.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\WTFString.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\text\WTFStringUtil.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ThreadingPthreads.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ThreadingWin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\ThreadSpecificWin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\TypeTraits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\WTF.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\wtf\WTFThreadData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="blinkgc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="blinkgc.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="blinkgc.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\wtf\BUILD.gn" />
+    <None Include="..\wtf\CONTRIBUTORS.pthreads-win32" />
+    <None Include="..\wtf\OWNERS" />
+    <None Include="..\wtf\text\StringImplMac.mm" />
+    <None Include="..\wtf\text\StringMac.mm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
